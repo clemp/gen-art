@@ -8,17 +8,25 @@ function setup() {
 function draw() {
   background(51);
   w.display();
-  w.walk()
+  w.update()
 }
 
 function Walker() {
   // this.x = width/2;
   // this.y = height/2;
   this.pos = createVector(width/2,height/2);
+  this.vel = createVector(0,0);
 
-  this.walk = function() {
-    this.vel = createVector(random(-1, 1),random(-1, 1));
-    this.pos = this.pos.add(this.vel);
+  this.update = function() {
+    // change acceleration randomly
+    this.acc = createVector(random(-1,1),random(-1,1));
+    // acceleration changes velocity
+    this.vel.add(this.acc);
+    // velocity changes position
+    this.pos.add(this.vel);
+
+
+
 
     // this.pos.x = this.pos.x + random(-1, 1);
     // this.pos.y = this.pos.y + random(-1, 1);
