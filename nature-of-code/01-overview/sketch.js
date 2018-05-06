@@ -12,17 +12,21 @@ function draw() {
 }
 
 function Walker() {
-  this.x = width/2;
-  this.y = height/2;
+  // this.x = width/2;
+  // this.y = height/2;
+  this.pos = createVector(width/2,height/2);
 
   this.walk = function() {
-    this.x = this.x + random(-1, 1);
-    this.y = this.y + random(-1, 1);
+    this.vel = createVector(random(-1, 1),random(-1, 1));
+    this.pos = this.pos.add(this.vel);
+
+    // this.pos.x = this.pos.x + random(-1, 1);
+    // this.pos.y = this.pos.y + random(-1, 1);
   }
 
   this.display = function() {
     fill(255);
-    ellipse(this.x, this.y, 48, 48);
+    ellipse(this.pos.x, this.pos.y, 48, 48);
   }
 
 }
