@@ -18,8 +18,15 @@ function Walker() {
   this.vel = createVector(0,0);
 
   this.update = function() {
+    // store mouse position
+    var mouse = createVector(mouseX, mouseY);
+
     // change acceleration randomly
-    this.acc = createVector(random(-1,1),random(-1,1));
+    // this.acc = createVector(random(-1,1),random(-1,1));
+
+    // acceleration to follow mouse location
+    this.acc = p5.Vector.sub(mouse,this.pos);
+    this.acc.mult(0.001);
     // acceleration changes velocity
     this.vel.add(this.acc);
     // velocity changes position
