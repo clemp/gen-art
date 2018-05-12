@@ -21,24 +21,26 @@ function Cell(x, y, r) {
 
     this.show = function() {
 
-        stroke(255);
+        // Line between each cell and its origin
+        // stroke(255);
+        stroke(255, 250, 192, 25);
         line(this.x, this.y, this.origin_x, this.origin_y);
 
         // How to display the cell for each run
         // stroke(255);
         noStroke();
-        fill(26, 229, 209, 50)
+        fill(255, 250, 192, 50)
         ellipse(this.x, this.y, this.r * 2);
 
         // Boundary around the origin
-        fill(125, 5);
-        ellipse(this.origin_x, this.origin_y, this.orbit_r);
+        // fill(125, 5);
+        // ellipse(this.origin_x, this.origin_y, this.orbit_r);
         // rect(this.origin_x-100, this.origin_y-50, 200, 100);\
 
-        textSize(24);
-        fill(255);
-        text("Distance between cell and origin:", 10, 90);
-        text(str(dist(this.x, this.y, this.origin_x, this.origin_y)), 10, 120);
+        // textSize(24);
+        // fill(255);
+        // text("Distance between cell and origin:", 10, 90);
+        // text(str(dist(this.x, this.y, this.origin_x, this.origin_y)), 10, 120);
     }
 
     this.clickedcell = function(x, y) {
