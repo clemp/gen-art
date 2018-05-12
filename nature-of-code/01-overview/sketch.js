@@ -12,11 +12,18 @@ function Cell(x, y, r) {
     // radius of each new cell
     this.r = r;
 
+    // orbit radius for each new cell
+    this.orbit_r = 200;
+
     // speed set for each cell as it moves around the canvas
     this.speedx = random(-1, 1);
     this.speedy = random(-1, 1);
 
     this.show = function() {
+
+        stroke(255);
+        line(this.x, this.y, this.origin_x, this.origin_y);
+
         // How to display the cell for each run
         // stroke(255);
         noStroke();
@@ -24,9 +31,14 @@ function Cell(x, y, r) {
         ellipse(this.x, this.y, this.r * 2);
 
         // Boundary around the origin
-        fill(255, 10);
-        // ellipse(this.origin_x, this.origin_y, 200);
-        rect(this.origin_x-100, this.origin_y-50, 200, 100);
+        fill(125, 5);
+        ellipse(this.origin_x, this.origin_y, this.orbit_r);
+        // rect(this.origin_x-100, this.origin_y-50, 200, 100);\
+
+        textSize(24);
+        fill(255);
+        text("Distance between cell and origin:", 10, 90);
+        text(str(dist(this.x, this.y, this.origin_x, this.origin_y)), 10, 120);
     }
 
     this.clickedcell = function(x, y) {
@@ -74,10 +86,11 @@ function Cell(x, y, r) {
         // }
 
       // Bounce off edges of rectangle
-      if (this.x > this.origin_x + 100 || this.x < this.origin_x - 100) {
-          this.speedx = -this.speedx;
-      }
-      if (this.y > this.origin_y + 50 || this.y < this.origin_y - 50) {
+      // if (this.x > this.origin_x + 100 || this.x < this.origin_x - 100) {
+      //     this.speedx = -this.speedx;
+      // }
+      // Bounce off edges of circle
+      if (dist(this.x, this.y, this.origin_x, this.origin_y) > this.orbit_r/2) {
           this.speedy = -this.speedy;
       }
 
@@ -155,6 +168,7 @@ function draw() {
     fill(255);
     text("# of Cells in System:", 10, 30);
     text(str(cells.length), 10, 60);
+
 }
 
 
