@@ -1,5 +1,7 @@
 var objects = [];
 var lines = [];
+var ends = [];
+
 // Set up array to store x, y coordinates of previous object origin
 var prev_pos = [];
 
@@ -37,8 +39,15 @@ function mouseClicked() {
 
 
     // Create new OriginCircle object, and add it to the 'objects' array
-    origin_radius = random(45,95);
+    origin_radius = random(65,95);
+    end_radius = 15;
+
     objects.push(new OriginCircle(pos.x, pos.y, origin_radius));
+
+    for (var i = 25; i >= 0; i--) {
+      objects.push(new EndCircle(pos.x, pos.y, end_radius));
+    }
+
 
     // Creates new LineNetwork object, adds to the 'lines' array
     // If this is the first time the mouse is being pressed, line is created
