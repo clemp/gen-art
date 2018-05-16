@@ -44,7 +44,7 @@ function mouseClicked() {
 
     objects.push(new OriginCircle(pos.x, pos.y, origin_radius));
 
-    for (var i = 2; i >= 0; i--) {
+    for (var i = 700; i >= 0; i--) {
       objects.push(new EndCircle(pos.x, pos.y, end_radius));
     }
 
