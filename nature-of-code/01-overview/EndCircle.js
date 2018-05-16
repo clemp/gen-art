@@ -15,7 +15,7 @@ class EndCircle {
   // Method to display
   display() {
     noStroke();
-    fill(255, 204, 0, 35);
+    fill(255);
     ellipse(this.pos.x, this.pos.y, this.radius);
   }
 
