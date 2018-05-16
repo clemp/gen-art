@@ -25,4 +25,5 @@ class EndCircle {
       this.pos.add(this.velocity);
     }
   }
+  
 }

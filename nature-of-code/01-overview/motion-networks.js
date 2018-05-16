@@ -46,15 +46,6 @@ function mouseClicked() {
       o = new EndCircle(pos.x, pos.y, end_radius);
       ends.push(o);
     }
-
-    // Creates new LineNetwork object, adds to the 'lines' array
-    // If this is the first time the mouse is being pressed, line is created
-    // as a single dot
-    // lines.push(new LineNetwork(pos.x, pos.y, prev_pos[prev_pos.length-2].x, prev_pos[prev_pos.length-2].y));
-
-    // } else {
-    //   lines.push(new LineNetwork(pos.x, pos.y, prev_pos[0].x, prev_pos[0].y));
-    // }
   }
 
 function end_network(objects) {
@@ -72,24 +63,17 @@ function origin_end_network(origins_list, ends_list) {
   var o = origins_list.length
   var e = ends_list.length
 
+  // If an origin has been created..
   if (o + e > 1) {
   // // For each origin...
     for (var i = o-1; i >= 0; i--) {
-      // stroke(255);
-      // line(origins_list[i].pos.x, origins_list[i].pos.y, 0, 0);
-  //     // And each end
+     // And each end
       for (var j = e-1; j >= 0; j--) {
+        // Draw a line
         stroke(255, 17);
         line(ends_list[j].pos.x, ends_list[j].pos.y, origins_list[i].pos.x, origins_list[i].pos.y);
-  //       stroke(255, random(55,90));
-  //       line(ends_list[j].pos.x, ends_list[j].pos.y, origins_list[i].pos.x, origins_list[i].pos.y);
       }
     }
-
-  // line(ends_list[o-1].pos.x, ends_list[o-1].pos.y, origins_list[i].pos.x, origins_list[i].pos.y);
-    // line(ends_list[e-1].pos.x, ends_list[e-1].pos.y, 0, 0);
-    // line(origins_list[o-1].pos.x, origins_list[o-1].pos.y, 0, 0);
-
   }
 }
 
@@ -107,17 +91,4 @@ function draw() {
 
   end_network(ends);
   origin_end_network(origins, ends);
-
-
-// i = 1; ends.length = 1;
-//
-//
-//
-//
-//
-
-    // Run every LineNetwork object in the 'lines' array
-  // for (var i = lines.length - 1; i >= 0; i--) {
-    // lines[i].run();
-  // }
 }
