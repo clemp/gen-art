@@ -61,13 +61,37 @@ function end_network(objects) {
   // Draw line
   if (objects.length > 1) {
     for (var i = objects.length-1; i >= 1; i--) {
-      stroke(255, random(55,90));
+      // stroke(255, random(55,90));
+      stroke(255, 10);
       line(ends[i].pos.x, ends[i].pos.y, ends[i-1].pos.x, ends[i-1].pos.y);
     }
   }
 }
 
-// function origin_end_
+function origin_end_network(origins_list, ends_list) {
+  var o = origins_list.length
+  var e = ends_list.length
+
+  if (o + e > 1) {
+  // // For each origin...
+    for (var i = o-1; i >= 0; i--) {
+      // stroke(255);
+      // line(origins_list[i].pos.x, origins_list[i].pos.y, 0, 0);
+  //     // And each end
+      for (var j = e-1; j >= 0; j--) {
+        stroke(255, 17);
+        line(ends_list[j].pos.x, ends_list[j].pos.y, origins_list[i].pos.x, origins_list[i].pos.y);
+  //       stroke(255, random(55,90));
+  //       line(ends_list[j].pos.x, ends_list[j].pos.y, origins_list[i].pos.x, origins_list[i].pos.y);
+      }
+    }
+
+  // line(ends_list[o-1].pos.x, ends_list[o-1].pos.y, origins_list[i].pos.x, origins_list[i].pos.y);
+    // line(ends_list[e-1].pos.x, ends_list[e-1].pos.y, 0, 0);
+    // line(origins_list[o-1].pos.x, origins_list[o-1].pos.y, 0, 0);
+
+  }
+}
 
 function draw() {
   background(51);
@@ -82,6 +106,7 @@ function draw() {
   }
 
   end_network(ends);
+  origin_end_network(origins, ends);
 
 
 // i = 1; ends.length = 1;
