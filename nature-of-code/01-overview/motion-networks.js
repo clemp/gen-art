@@ -37,11 +37,11 @@ function mouseClicked() {
 
     // Create new OriginCircle object, and add it to the 'objects' array
     origin_radius = random(65,95);
-    end_radius = 25;
+    end_radius = 2;
 
     origins.push(new OriginCircle(pos.x, pos.y, origin_radius));
 
-    for (var i = 1; i >= 0; i--) {
+    for (var i = 250; i >= 0; i--) {
       // distance away from origin is regulated inside the EndCircle object
       o = new EndCircle(pos.x, pos.y, end_radius);
       ends.push(o);
@@ -57,17 +57,17 @@ function mouseClicked() {
     // }
   }
 
-function line_network(ends) {
+function end_network(objects) {
   // Draw line
-  if (ends.length > 1) {
-    for (var i = ends.length-1; i >= 1; i--) {
-      stroke(255);
-      line(ends[i].pos.x, ends[i].pos.y, 0, 0);
-      stroke(255);
-      line(ends[i-1].pos.x, ends[i-1].pos.y, width, height);
+  if (objects.length > 1) {
+    for (var i = objects.length-1; i >= 1; i--) {
+      stroke(255, random(55,90));
+      line(ends[i].pos.x, ends[i].pos.y, ends[i-1].pos.x, ends[i-1].pos.y);
     }
   }
 }
+
+// function origin_end_
 
 function draw() {
   background(51);
@@ -81,7 +81,7 @@ function draw() {
     ends[i].run();
   }
 
-  line_network(ends);
+  end_network(ends);
 
 
 // i = 1; ends.length = 1;
