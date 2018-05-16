@@ -44,7 +44,7 @@ function mouseClicked() {
 
     objects.push(new OriginCircle(pos.x, pos.y, origin_radius));
 
-    for (var i = 25; i >= 0; i--) {
+    for (var i = 2; i >= 0; i--) {
       objects.push(new EndCircle(pos.x, pos.y, end_radius));
     }
 
@@ -72,7 +72,7 @@ function draw() {
   }
 
   // Run every LineNetwork object in the 'lines' array
-  for (var i = lines.length - 1; i >= 0; i--) {
-    lines[i].run();
-  }
+  // for (var i = lines.length - 1; i >= 0; i--) {
+    // lines[i].run();
+  // }
 }

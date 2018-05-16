@@ -1,7 +1,8 @@
 class EndCircle {
   constructor(x, y, r) {
     this.pos = createVector(x, y);
-    this.acc = createVector(random(-0.5, 0.5),random(-0.5, 0.5));
+    this.origin = createVector(x,y);
+    this.acc = createVector(random(-0.01, 0.01),random(-0.01, 0.01));
     this.velocity = createVector(random(-1,1),random(-1,1));
     this.radius = r;
   }
@@ -19,7 +20,9 @@ class EndCircle {
   }
 
   move() {
-    this.velocity.add(this.acc);
-    this.pos.add(this.velocity);
+    if (dist(this.pos.x, this.pos.y, this.origin.x, this.origin.y) < 150) {
+      this.velocity.add(this.acc);
+      this.pos.add(this.velocity);
+    }
   }
 }
