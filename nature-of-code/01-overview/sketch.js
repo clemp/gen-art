@@ -5,7 +5,7 @@ var oms;
 // var lines = [];
 
 function setup() {
-  createCanvas(320, 480);
+  c = createCanvas(320, 480);
   // Make a Walker object
   // c = new OriginCircle();
   oms = [];
@@ -18,6 +18,13 @@ function mouseClicked() {
   oms.push(om);
 
   print("# of origins: ", str(oms.length));
+}
+
+function keyPressed() {
+  if (keyCode === 32) {
+    saveCanvas(c, 'myCanvas', 'png');
+  }
+  return false; // prevent default
 }
 
 function draw() {
