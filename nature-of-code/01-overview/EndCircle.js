@@ -9,7 +9,7 @@ class EndCircle {
 
   run() {
     this.display();
-    this.move();
+    this.expand();
   }
 
   // Method to display
@@ -19,11 +19,12 @@ class EndCircle {
     ellipse(this.pos.x, this.pos.y, this.radius);
   }
 
-  move() {
+  // Expand outward away from origin
+  expand() {
     if (dist(this.pos.x, this.pos.y, this.origin.x, this.origin.y) < 150) {
       this.velocity.add(this.acc);
       this.pos.add(this.velocity);
     }
   }
-  
+
 }
