@@ -21,7 +21,7 @@ class EndCircle {
 
   // Expand outward away from origin
   expand() {
-    if (dist(this.pos.x, this.pos.y, this.origin.x, this.origin.y) < 150) {
+    if (dist(this.pos.x, this.pos.y, this.origin.x, this.origin.y) < 50) {
       this.velocity.add(this.acc);
       this.pos.add(this.velocity);
     }
