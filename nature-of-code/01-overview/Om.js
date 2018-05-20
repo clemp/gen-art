@@ -13,7 +13,7 @@ class OmSystem {
 
   // Add a bunch of EndCircle particles
   addParticles() {
-    for (var i = 0; i < 250; i++){
+    for (var i = 0; i < 20; i++){
       var p = new EndCircle(this.origin.x, this.origin.y, 2);
       this.particles.push(p);
     }
@@ -22,11 +22,19 @@ class OmSystem {
   // Add lines connecting particles to origin
   addLinesOriginParticle() {
     for (var i = this.particles.length-1; i >= 0; i--) {
-      // strokeWeight(2);
       stroke(255,17);
       line(this.particles[i].pos.x,this.particles[i].pos.y,this.origin.x,this.origin.y);
     }
+  }
 
+  // Add lines connecting particles to each other
+  addLinesParticleParticle() {
+    for (var i = this.particles.length-1; i>=0; i--){
+      for (var j = this.particles.length-2; j>=0; j--) {
+        stroke(255, 25);
+        line(this.particles[i].pos.x, this.particles[i].pos.y, this.particles[j].pos.x, this.particles[j].pos.y);
+      }
+    }
   }
 
 
@@ -42,10 +50,9 @@ class OmSystem {
 
     // Origin to Particle lines
     this.addLinesOriginParticle();
-    //
-    // strokeWeight(2);
-    // stroke(255);
-    // line(this.origin.x,this.origin.y,100,40);
+
+    // Particle to Particle lines
+    this.addLinesParticleParticle();
   }
 
 }
