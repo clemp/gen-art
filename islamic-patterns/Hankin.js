@@ -8,14 +8,14 @@ function Hankin(a, v) {
   this.show = function() {
     // console.log(this.b);
     stroke(255, 0, 255);
-    line(this.a.x, this.a.y, this.b.x, this.b.y);
-    fill(255);
-    ellipse(this.a.x, this.a.y, 6);
-    // console.log(this.end);
-    if (this.end){
-      fill(255, 255, 0);
-      ellipse(this.end.x, this.end.y, 12);
-    }
+    line(this.a.x, this.a.y, this.end.x, this.end.y);
+    // fill(255);
+    // ellipse(this.a.x, this.a.y, 6);
+    // // console.log(this.end);
+    // if (this.end){
+    //   fill(255, 255, 0);
+    //   ellipse(this.end.x, this.end.y, 12);
+    // }
   }
 //
   this.findEnd = function(other) {
