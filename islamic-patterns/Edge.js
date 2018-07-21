@@ -3,7 +3,7 @@ function Edge(a,b) {
   this.b = b;
   this.h1;
   this.h2;
-  this.angle =  60;
+  this.angle =  angle;
   this.mid;
 
   this.show = function() {
