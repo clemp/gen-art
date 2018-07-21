@@ -44,17 +44,17 @@ function Edge(a,b) {
 
     v1.rotate(-this.angle);
     // Text helper documentation
-    fill(255);
-    textSize(18);
-    text("v1 x,y: ", v1.x, v1.y);
+    // fill(255);
+    // textSize(18);
+    // text("v1 x,y: ", v1.x, v1.y);
     // stroke(225);
     // line(0,0,v1.x,v1.y);
     // Text helper documentation
     v2.rotate(this.angle);
     // // Text helper documentation
-    fill(255);
-    textSize(18);
-    text("v2 x,y: ", v2.x, v2.y);
+    // fill(255);
+    // textSize(18);
+    // text("v2 x,y: ", v2.x, v2.y);
     // stroke(225);
     // line(0,0,v2.x,v2.y);
     // End helper documentation
@@ -84,7 +84,6 @@ function Edge(a,b) {
     // text("edge x,y: ", edge.h1.a.x, edge.h1.a.y);
     // End documentation
     this.h1.findEnd(edge.h1);
-    // // console.log(this.h1.findEnd(edge.h1));
     this.h1.findEnd(edge.h2);
     this.h2.findEnd(edge.h2);
     this.h2.findEnd(edge.h1);
