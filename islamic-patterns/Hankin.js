@@ -48,18 +48,18 @@ function Hankin(a, v) {
 
     ua = numa/den;
     ub = numb/den;
-    console.log("ua: ", ua, "ub: ", ub);
+    // console.log("ua: ", ua, "ub: ", ub);
 
     var x = this.a.x + ua * (x2_x1);
     var y = this.a.y + ua * (y2_y1);
     if (ua > 0 && ub > 0){
       var candidate = createVector(x,y);
-      console.log("x: ", x, " y: ", y, "candidate: ", candidate);
+      // console.log("x: ", x, " y: ", y, "candidate: ", candidate);
       var d1 = p5.Vector.dist(candidate, this.a);
       var d2 = p5.Vector.dist(candidate, other.a);
       var d = d1 + d2;
-      console.log("d1: ", d1, " d2: ", d2, " d: ", d);
-      console.log("this.end: ", this.end, " (!this.end) T/F: ", (!this.end));
+      // console.log("d1: ", d1, " d2: ", d2, " d: ", d);
+      // console.log("this.end: ", this.end, " (!this.end) T/F: ", (!this.end));
 
       if (!this.end) {
         this.end = candidate;
@@ -69,8 +69,8 @@ function Hankin(a, v) {
         this.end = candidate;
       }
 
-      console.log("final candidate:", candidate);
-      console.log("this.end: ", this.end);
+      // console.log("final candidate:", candidate);
+      // console.log("this.end: ", this.end);
     }
 
   }

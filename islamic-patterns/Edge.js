@@ -3,8 +3,8 @@ function Edge(a,b) {
   this.b = b;
   this.h1;
   this.h2;
-  this.angle =  angle;
-  this.mid;
+  // this.angle =  angle;
+  // this.mid;
 
   this.show = function() {
     stroke(255);
@@ -31,13 +31,24 @@ function Edge(a,b) {
 
     var v1 = p5.Vector.sub(this.a, mid);
     var v2 = p5.Vector.sub(this.b, mid);
+    var offset1 = mid;
+    var offset2 = mid;
+
+    if (delta > 0) {
+      v1.setMag(delta);
+      v2.setMag(delta);
+      var offset1 = p5.Vector.add(mid, v2);
+      var offset2 = p5.Vector.add(mid, v1);
+    }
+
     v1.normalize();
     v2.normalize();
-    v1.rotate(-this.angle);
-    v2.rotate(this.angle);
 
-    this.h1 = new Hankin(mid, v1);
-    this.h2 = new Hankin(mid, v2);
+    v1.rotate(-angle);
+    v2.rotate(angle);
+
+    this.h1 = new Hankin(offset1, v1);
+    this.h2 = new Hankin(offset2, v2);
   }
 
   this.findEnds = function(edge) {
