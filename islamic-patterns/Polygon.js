@@ -25,8 +25,14 @@ function Polygon() {
     for (var i = 0; i < this.edges.length; i++) {
       this.edges[i].hankin();
     }
-    this.edges[0].findEnds(this.edges[1]);
-  // console.log(this.edges);
+
+    for (var i=0; i<this.edges.length;i++) {
+      for (var j=0; j<this.edges.length;j++) {
+        if (i !== j) {
+          this.edges[i].findEnds(this.edges[j]);
+        }    
+      }
+    }
   }
 
   // this.edges[0].findEnds(this.edges[1]);

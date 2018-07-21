@@ -63,10 +63,9 @@ function Hankin(a, v) {
 
       if (!this.end) {
         this.end = candidate;
-        console.log("hi");
         this.prevD = d;
       } else if (d < this.prevD) {
-        // this.prevD = candidate;
+        this.prevD = d;
         this.end = candidate;
       }
 
