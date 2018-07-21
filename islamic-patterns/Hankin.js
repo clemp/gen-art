@@ -58,16 +58,20 @@ function Hankin(a, v) {
       var d1 = p5.Vector.dist(candidate, this.a);
       var d2 = p5.Vector.dist(candidate, other.a);
       var d = d1 + d2;
+      var diff = abs(d1 - d2);
+      if (diff < 0.001) {
+        if (!this.end) {
+          this.end = candidate;
+          this.prevD = d;
+        } else if (d < this.prevD) {
+          this.prevD = d;
+          this.end = candidate;
+        }
+      }
       // console.log("d1: ", d1, " d2: ", d2, " d: ", d);
       // console.log("this.end: ", this.end, " (!this.end) T/F: ", (!this.end));
 
-      if (!this.end) {
-        this.end = candidate;
-        this.prevD = d;
-      } else if (d < this.prevD) {
-        this.prevD = d;
-        this.end = candidate;
-      }
+
 
       // console.log("final candidate:", candidate);
       // console.log("this.end: ", this.end);
