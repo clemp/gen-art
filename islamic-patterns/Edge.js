@@ -33,44 +33,11 @@ function Edge(a,b) {
     var v2 = p5.Vector.sub(this.b, mid);
     v1.normalize();
     v2.normalize();
-    // Text helper documentation
-    // fill(255);
-    // textSize(18);
-    // text("v1 x,y: ", v1.x, v1.y);
-    // // Text helper documentation
-    // fill(255);
-    // textSize(18);
-    // text("v2 x,y: ", v2.x, v2.y);
-    // End helper documentation
-
     v1.rotate(-this.angle);
-    // Text helper documentation
-    // fill(255);
-    // textSize(18);
-    // text("v1 x,y: ", v1.x, v1.y);
-    // stroke(225);
-    // line(0,0,v1.x,v1.y);
-    // Text helper documentation
     v2.rotate(this.angle);
-    // // Text helper documentation
-    // fill(255);
-    // textSize(18);
-    // text("v2 x,y: ", v2.x, v2.y);
-    // stroke(225);
-    // line(0,0,v2.x,v2.y);
-    // End helper documentation
-
-    // End helper documentation
 
     this.h1 = new Hankin(mid, v1);
     this.h2 = new Hankin(mid, v2);
-    // Text helper documentation
-    // fill(255);
-    // textSize(18);
-    // text("h1 x,y: ", this.h1.a.x, this.h1.a.y);
-    // End documentation
-    // console.log("this.h1.a.x: ", this.h1.a.x, "this.h1.y: ", this.h1.y);
-    // text("other.v", other.v.x, other.v.y);
   }
 
   this.findEnds = function(edge) {
