@@ -7,7 +7,6 @@ function Edge(a,b) {
   this.mid;
 
   this.show = function() {
-    // console.log(this.a, this.b);
     stroke(255);
     line(this.a.x, this.a.y, this.b.x, this.b.y);
 
@@ -32,6 +31,8 @@ function Edge(a,b) {
 
     var v1 = p5.Vector.sub(this.a, mid);
     var v2 = p5.Vector.sub(this.b, mid);
+    v1.normalize();
+    v2.normalize();
     // Text helper documentation
     // fill(255);
     // textSize(18);
