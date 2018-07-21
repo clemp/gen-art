@@ -7,8 +7,8 @@ function Edge(a,b) {
   // this.mid;
 
   this.show = function() {
-    stroke(255);
-    line(this.a.x, this.a.y, this.b.x, this.b.y);
+    // stroke(255);
+    // line(this.a.x, this.a.y, this.b.x, this.b.y);
 
     // Text helper documentation
     // fill(255);
