@@ -6,7 +6,7 @@ function Hankin(a, v) {
     // console.log("x: ", a.x, " y: ", a.y );
   this.show = function() {
     // console.log(this.b);
-    stroke(HSB, 211, 62, 100);
+    stroke(25);
     // strokeWeight(2);
     line(this.a.x, this.a.y, this.end.x, this.end.y);
   }

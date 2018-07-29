@@ -32,7 +32,7 @@ function setup() {
 }
 
 function draw() {
-  background(51);
+  background(255);
   delta = deltaSlider.value();
   angle = angleSlider.value();
   for (var i = 0; i < polys.length; i++) {
