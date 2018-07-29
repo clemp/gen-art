@@ -1,4 +1,5 @@
-function Polygon() {
+function Polygon(sides) {
+  this.interiorAngle = ((sides - 2) * PI) / sides;
   this.edges = [];
   this.vertices = [];
 
@@ -11,6 +12,7 @@ function Polygon() {
       this.edges.push(edge);
     }
     this.vertices.push(a);
+    // console.log("x: ", a.x, " y: ", a.y );
   }
   //
   this.close = function() {
@@ -23,28 +25,10 @@ function Polygon() {
 
   this.hankin = function() {
     for (var i = 0; i < this.edges.length; i++) {
-      this.edges[i].hankin();
-    }
-
-    for (var i=0; i<this.edges.length;i++) {
-      for (var j=0; j<this.edges.length;j++) {
-        if (i !== j) {
-          this.edges[i].findEnds(this.edges[j]);
-        }    
-      }
+      this.edges[i].hankin(this.interiorAngle);
     }
   }
 
-  // this.edges[0].findEnds(this.edges[1]);
-  //
-  // for (var i = 0; i < this.edges.length; i++) {
-  //       this.edges[0].findEnds(this.edges[i]);
-  //     // if (0 !== i) {
-  //     //
-  //     // }
-  // }
-
-  //
   this.show = function() {
     for (var i = 0; i < this.edges.length; i++) {
       this.edges[i].show();
