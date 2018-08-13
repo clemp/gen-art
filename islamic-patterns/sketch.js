@@ -2,19 +2,23 @@
 var polys = [];
 // var angle = 18;
 // var delta = 25;
-var angle = 75;
-var delta =10;
+// var angle = 58;
+// var delta = 10;
 
 var angleSlider;
 var deltaSlider;
 
-function setup() {
-  createCanvas(800,800);
-  deltaSlider = createSlider(1,100,10);
-  angleSlider = createSlider(0,90,60);
+var angleSliderIncrease;
+var deltaSliderIncrease;
 
-  angleMode(DEGREES);
-  var inc = 50;
+
+function setup() {
+  createCanvas(810,810);
+  deltaSlider = createSlider(1,55,40);
+  angleSlider = createSlider(0,90,58);
+
+  // angleMode(DEGREES);
+  var inc = 80;
   for (var x = 0; x < width; x+=inc) {
     for (var y = 0; y < height; y += inc) {
       var poly = new Polygon(4);
@@ -34,6 +38,7 @@ function setup() {
 function draw() {
   background(255);
   delta = deltaSlider.value();
+  // text("angle");
   angle = angleSlider.value();
   for (var i = 0; i < polys.length; i++) {
     polys[i].hankin();
