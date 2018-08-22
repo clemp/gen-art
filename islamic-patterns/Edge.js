@@ -84,5 +84,14 @@ function Edge(a,b) {
       vertex(this.h2.a.x, this.h2.a.y);
       vertex(this.h1.end.x, this.h1.end.y);
     endShape();
+
+    fill(255, 255, 0);
+    beginShape(TRIANGLES);
+      vertex(this.h1.a.x, this.h1.a.y);
+      vertex(this.h2.a.x, this.h2.a.y);
+      vertex(this.h2.end.x, this.h2.end.y);
+    endShape();
+
+
   }
 }
