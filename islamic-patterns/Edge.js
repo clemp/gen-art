@@ -77,5 +77,12 @@ function Edge(a,b) {
 
     this.h1 = new Hankin(offset1, v1);
     this.h2 = new Hankin(offset2, v2);
+
+    fill(0);
+    beginShape(TRIANGLES);
+      vertex(this.h1.a.x, this.h1.a.y);
+      vertex(this.h2.a.x, this.h2.a.y);
+      vertex(this.h1.end.x, this.h1.end.y);
+    endShape();
   }
 }
